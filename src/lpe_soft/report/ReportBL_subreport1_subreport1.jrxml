@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReportBL_subreport1_subreport1" language="groovy" pageWidth="752" pageHeight="572" orientation="Landscape" columnWidth="752" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="53e87414-c326-4762-9336-29a66a28a92d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     client.`NOM_CLIENT` AS client_NOM_CLIENT,
+     client.`ID_CLIENT` AS client_ID_CLIENT
+FROM
+     `client` client]]>
+	</queryString>
+	<field name="client_NOM_CLIENT" class="java.lang.String"/>
+	<field name="client_ID_CLIENT" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="63" y="0" width="142" height="20" uuid="a5af0bc3-32f3-4440-bbc6-1681ebb425f4"/>
+				<textFieldExpression><![CDATA[$F{client_NOM_CLIENT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="63" height="20" uuid="c6bc0043-15e7-4315-8a41-ff06ba8873f2"/>
+				<text><![CDATA[Nom Client :]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+</jasperReport>
