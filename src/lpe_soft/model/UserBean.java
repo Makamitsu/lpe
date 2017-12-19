@@ -9,7 +9,10 @@ import java.util.ArrayList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import lpe_soft.Lpe_Soft;
-
+/**
+ * coucou
+ * @author hugob
+ */
 public class UserBean {
     public boolean Connexion(String login, String password) throws SQLException {
         Connection connection = Lpe_Soft.connection;
