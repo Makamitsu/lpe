@@ -29,6 +29,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import lpe_soft.model.DataClient;
+import lpe_soft.model.Tools;
+import lpe_soft.model.UserBean;
 
 /**
  * FXML Controller class
@@ -56,11 +58,7 @@ public class ClientController implements Initializable {
     //Recherche
     @FXML
     private void handleRecherche(ActionEvent event) throws IOException {
-        if ((tfCode.getText().isEmpty() && tfType.getText().isEmpty())) {
-            System.out.println("vide");
-        }else{
-            System.out.println("recherche");
-        }
+        updateTable();
     }
     //Clic img for go home
     @FXML
@@ -186,7 +184,11 @@ public class ClientController implements Initializable {
             Date now = new Date();
             long diff = now.getTime() - lastClickTime.getTime();
             if (diff < 300) { //another click registered in 300 millis
-                Parent root = FXMLLoader.load(getClass().getResource("DetailClient.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("DetailClient.fxml"));
+                loader.load();
+                DetailClientController controller = loader.getController();
+                controller.setClient(row);
+                Parent root = loader.getRoot();
                 Scene scene = myMenuBar.getScene();
                 scene.setRoot(root);
             } else {
@@ -194,23 +196,35 @@ public class ClientController implements Initializable {
             }
         }
     }
+    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        Code.setCellValueFactory(new PropertyValueFactory<DataClient, String>("code"));
+        Code.setCellValueFactory(new PropertyValueFactory<DataClient, String>("codeClient"));
         Nom.setCellValueFactory(new PropertyValueFactory<DataClient, String>("nom"));
         Correspondant.setCellValueFactory(new PropertyValueFactory<DataClient, String>("correspondant"));
         Email.setCellValueFactory(new PropertyValueFactory<DataClient, String>("email"));
         Telephone.setCellValueFactory(new PropertyValueFactory<DataClient, String>("telephone"));
+        updateTable();
+    }
+    
+    private void updateTable(){
+        UserBean ub = new UserBean();
+        
+        String type = Tools.formate(tfType.getText());
+        String code = Tools.formate(tfCode.getText());
+        
+        if (type.equals("") && code.equals("") ){
+            tableView.setItems(ub.getAllClient());
+        }else {
+            tableView.setItems(ub.getAllClientBy(code, type));
+        }
 
-        personData.add(new DataClient("SG", "SGame","Mr. Girard","SGame.SGame@SGame.com","+33512457896"));
-        personData.add(new DataClient("SA", "SORHEA","Mr. Jean","sorhea.sorhea@sorhea.com","0621549630"));
-        personData.add(new DataClient("UT", "UPSTART","Mr. Toto","upstart.upstart@upstart.fr","+3520156532"));
-        personData.add(new DataClient("BR", "BOUYER","Mme. Ana","bouyer.bouyer@bouyer.com","0451329587"));
-
-        tableView.setItems(getPersonData());
+        tableView.refresh();
+        tfCode.setText("");
+        tfType.setText("");
     }
 
     public ObservableList<DataClient> getPersonData() {

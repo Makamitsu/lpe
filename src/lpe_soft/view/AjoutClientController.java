@@ -3,6 +3,8 @@ package lpe_soft.view;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import lpe_soft.model.Client;
+import lpe_soft.model.DataClient;
 import lpe_soft.model.UserBean;
 
 /**
@@ -46,21 +48,21 @@ public class AjoutClientController implements Initializable {
             Scene scene = (Scene) ((Node) event.getSource()).getScene();
             scene.setRoot(root);
         } else {
-            Client tempClient = new Client();
-            tempClient.setCodeClient(f_codeClient.getText());
-            tempClient.setNom(f_nom.getText());
-            tempClient.setTelephone(f_telephone.getText());
-            tempClient.setFax(f_fax.getText());
-            tempClient.setEmail(f_email.getText());
-            tempClient.setCorrespondant(f_correspondant.getText());
-            tempClient.setIncoterm(f_incoterm.getText());
-            tempClient.setEori(f_eori.getText());
-            tempClient.setReglement(f_reglement.getText());
-            tempClient.setTransport(f_transport.getText());
-            tempClient.setAutorisationPP(f_autorisationPP.getText());
-            tempClient.setNumeroOF(f_numeroOF.getText());
-            tempClient.setAdresseFacturation(f_adresseFacturation.getText());
-            tempClient.setAdresseLivraison(f_adresseLivraison.getText());
+            DataClient tempClient = new DataClient();
+            tempClient.setCodeClient(new SimpleStringProperty(f_codeClient.getText()));
+            tempClient.setNom(new SimpleStringProperty(f_nom.getText()));
+            tempClient.setTelephone(new SimpleStringProperty(f_telephone.getText()));
+            tempClient.setFax(new SimpleStringProperty(f_fax.getText()));
+            tempClient.setEmail(new SimpleStringProperty(f_email.getText()));
+            tempClient.setCorrespondant(new SimpleStringProperty(f_correspondant.getText()));
+            tempClient.setIncoterm(new SimpleStringProperty(f_incoterm.getText()));
+            tempClient.setEori(new SimpleStringProperty(f_eori.getText()));
+            tempClient.setReglement(new SimpleStringProperty(f_reglement.getText()));
+            tempClient.setTransport(new SimpleStringProperty(f_transport.getText()));
+            tempClient.setAutorisationPP(new SimpleStringProperty(f_autorisationPP.getText()));
+            tempClient.setNumeroOF(new SimpleStringProperty(f_numeroOF.getText()));
+            tempClient.setAdresseFacturation(new SimpleStringProperty(f_adresseFacturation.getText()));
+            tempClient.setAdresseLivraison(new SimpleStringProperty(f_adresseLivraison.getText()));
             UserBean ubean = new UserBean();
             
             boolean done = ubean.addNewClient(tempClient);

@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lpe_soft.view.ConnexionController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lpe_soft.view.ConnexionController">
    <children>
       <BorderPane layoutX="210.0" layoutY="105.0" prefHeight="529.0" prefWidth="584.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
@@ -50,6 +50,12 @@
                               <Font size="21.0" />
                            </font>
                         </Label>
+                  <Label fx:id="invalid_label" textFill="#e10000" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM" />
+                  <ComboBox prefHeight="25.0" prefWidth="359.0" promptText="LPE" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </GridPane.margin>
+                  </ComboBox>
                         <TextField fx:id="username_box" prefHeight="25.0" prefWidth="374.0" promptText="Identifiant" GridPane.rowIndex="2">
                            <opaqueInsets>
                               <Insets />
@@ -61,8 +67,6 @@
                               <Insets left="20.0" right="20.0" />
                            </GridPane.margin>
                         </TextField>
-                        <Button fx:id="btn1" alignment="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#handleButtonConnexion" prefHeight="41.0" prefWidth="294.0" text="Connexion" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-                  <Label fx:id="invalid_label" textFill="#e10000" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM" />
                   <PasswordField fx:id="password_box" prefHeight="25.0" prefWidth="309.0" promptText="Mots de passe" GridPane.rowIndex="3">
                      <GridPane.margin>
                         <Insets left="20.0" right="20.0" />
@@ -71,11 +75,7 @@
                         <Insets left="10.0" />
                      </padding>
                   </PasswordField>
-                  <ComboBox prefHeight="25.0" prefWidth="359.0" promptText="LPE" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets left="20.0" right="20.0" />
-                     </GridPane.margin>
-                  </ComboBox>
+                        <Button fx:id="btn1" alignment="CENTER" defaultButton="true" mnemonicParsing="false" onAction="#handleButtonConnexion" prefHeight="41.0" prefWidth="294.0" text="Connexion" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
                      </children>
                   </GridPane>
          </center>

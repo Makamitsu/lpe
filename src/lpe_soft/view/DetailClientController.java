@@ -22,6 +22,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import lpe_soft.model.DataClient;
 
 /**
  * FXML Controller class
@@ -47,6 +48,8 @@ public class DetailClientController implements Initializable {
     @FXML private Button btnDelete;
     @FXML private Button btnBack;
     
+    private DataClient client;
+    
     @FXML
     private void handleBack(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("Client.fxml"));
@@ -55,8 +58,12 @@ public class DetailClientController implements Initializable {
     }
     @FXML
     private void handleEdit(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("EditClient.fxml"));
-        Scene scene = (Scene) ((Node) event.getSource()).getScene();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("EditClient.fxml"));
+        loader.load();
+        EditClientController controller = loader.getController();
+        controller.setClient(client);
+        Parent root = loader.getRoot();
+        Scene scene = Code.getScene();
         scene.setRoot(root);
     }
     @FXML
@@ -76,7 +83,28 @@ public class DetailClientController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+
+    }
+
+    public void setClient(DataClient client) {
+        this.client = client;
+        
+        this.Code.setText(client.getCodeClient());
+        this.Nom.setText(client.getNom());
+        this.Correspondant.setText(client.getCorrespondant());
+        this.Email.setText(client.getEmail());
+        this.Telephone.setText(client.getTelephone());
+        this.Fax.setText(client.getFax());
+        this.Incoterm.setText(client.getIncoterm());
+        this.EORI.setText(client.getEori());
+        this.Reglement.setText(client.getReglement());
+        this.transport.setText(client.getTransport());
+        this.PP.setText(client.getAutorisationPP());
+        this.AdrFacture.setText(client.getAdresseFacturation());
+        this.AdrLivraison.setText(client.getAdresseLivraison());
+    }
+
+    public DataClient getClient() {
+        return client;
+    }
 }
