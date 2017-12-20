@@ -11,11 +11,15 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import lpe_soft.model.DataClient;
+import lpe_soft.model.UserBean;
 
 public class CommandeController implements Initializable {
 
     @FXML private Button btnNext;
     @FXML private Button btnBack;
+    @FXML private ComboBox comboClient;
     
     @FXML
     private void handleBack (ActionEvent event) throws IOException {
@@ -26,14 +30,26 @@ public class CommandeController implements Initializable {
     
     @FXML
     private void handleNext(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("CommandeProduit.fxml"));
-        Scene scene = (Scene) ((Node) event.getSource()).getScene();
-        scene.setRoot(root);
+        if (comboClient.getValue() != null){            
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("CommandeProduit.fxml"));
+            loader.load();
+            DetailClientController controller = loader.getController();
+            controller.setClient((DataClient) comboClient.getValue());
+            Parent root = loader.getRoot();
+            Scene scene = btnNext.getScene();
+            scene.setRoot(root);
+        }
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        updateComboBox();
     }    
+    
+    private void updateComboBox(){
+        UserBean ub = new UserBean();
+        this.comboClient.setItems(ub.getAllClient());
+    }
+    
     
 }
