@@ -245,23 +245,9 @@ public class DataClient {
     public void setAdresseLivraison(StringProperty adresseLivraison) {
         this.adresseLivraison = adresseLivraison;
     }
-
-    
     
     public String toString(){
-        return " - codeClient: " +codeClient+
-        " - nom: " +nom+
-        " - telephone: " +telephone+
-        " - fax: " +fax+
-        " - email: " +email+
-        " - correspondant: " +correspondant+
-        " - incoterm: " +incoterm+
-        " - reglement: " +reglement+
-        " - transport: " +transport+
-        " - autorisationPP: " +autorisationPP+
-        " - numeroOF: " +numeroOF+
-        " - adresseFacturation: " +adresseFacturation+
-        " - adresseLivraison: " +adresseLivraison;
+        return codeClient.getValue() + " - " + nom.getValue();
     }
 
 }
