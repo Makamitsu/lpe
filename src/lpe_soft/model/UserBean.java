@@ -211,5 +211,63 @@ public class UserBean {
         return done;
     }
     
+    public ObservableList<DataDesignation> getAllDesignation(){
+        Connection connection = Lpe_Soft.connection;
+        ArrayList<DataDesignation> desi = new ArrayList<>();
+        try {
+            Statement stmnt = connection.createStatement();
+            ResultSet rs = stmnt.executeQuery("SELECT * FROM designation");
+            while (rs.next()) {
+                int i = 0;
+                desi.add(new DataDesignation(
+                        rs.getLong("ID_DESIGNATION"),
+                        rs.getString("FAMILLE_ARTICLE")
+                ));
+            }
+        }
+        catch(SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        
+        return FXCollections.observableArrayList(desi);
+    }
+
+    public boolean isDesignationUsed(DataDesignation selected) {
+        Connection connection = Lpe_Soft.connection;
+        try {
+            Statement stmnt = connection.createStatement();
+            ResultSet rs = stmnt.executeQuery("SELECT * FROM produit JOIN designation USING (ID_DESIGNATION)");
+            if(rs.next()){
+                return true;
+            }            
+        }
+        catch(SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        return false;
+    }
+
+    public void deleteDesignation(DataDesignation selected) {
+
+    }
+
+    public boolean addDesignation(String text) {
+        Connection connection = Lpe_Soft.connection;
+        try {
+            Statement check = connection.createStatement();
+            ResultSet rs = check.executeQuery("SELECT * FROM designation WHERE FAMILLE_ARTICLE like '"+text+"'");
+            if(!rs.next()){
+                String query = "INSERT designation (FAMILLE_ARTICLE) VALUES ('"+text+"')";
+                PreparedStatement preparedStmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+                preparedStmt.executeUpdate();
+                return true;
+            }        
+        }
+        catch(SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        return false;
+    }
+    
     
 }
