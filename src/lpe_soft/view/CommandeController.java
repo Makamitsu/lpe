@@ -33,7 +33,7 @@ public class CommandeController implements Initializable {
         if (comboClient.getValue() != null){            
             FXMLLoader loader = new FXMLLoader(getClass().getResource("CommandeProduit.fxml"));
             loader.load();
-            DetailClientController controller = loader.getController();
+            CommandeProduitController controller = loader.getController();
             controller.setClient((DataClient) comboClient.getValue());
             Parent root = loader.getRoot();
             Scene scene = btnNext.getScene();

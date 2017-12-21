@@ -50,4 +50,9 @@ public class DataProduit {
     public StringProperty typeProperty() {
         return type;
     }
+    
+    @Override
+    public String toString(){
+        return code.getValue()+ " [" + type.getValue() + "]";
+    }
 }

@@ -228,7 +228,6 @@ public class UserBean {
         catch(SQLException ex) {
             System.err.println(ex.getMessage());
         }
-        
         return FXCollections.observableArrayList(desi);
     }
 
@@ -268,6 +267,54 @@ public class UserBean {
         }
         return false;
     }
+
+    public ObservableList<DataProduit> getAllProducts() {
+        Connection connection = Lpe_Soft.connection;
+        ArrayList<DataProduit> prod = new ArrayList<>();
+        try {
+            Statement stmnt = connection.createStatement();
+            ResultSet rs = stmnt.executeQuery("SELECT * FROM produit JOIN designation USING (ID_DESIGNATION)");
+            while (rs.next()) {
+                prod.add(new DataProduit(
+                        rs.getString("KIT_REF_CLIENT"),
+                        rs.getString("FAMILLE_ARTICLE"), 
+                        rs.getFloat("PRIX")));
+            }
+        }
+        catch(SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        return FXCollections.observableArrayList(prod);
+    }
+
+    public boolean addNewProduct(DataProduit newProduit) {
+        Connection connection = Lpe_Soft.connection;
+        try {
+            String query = "INSERT INTO `produit` ("
+                    + "`KIT_REF_CLIENT`,"
+                    + "`PRIX`,"
+                    + "`ID_DESIGNATION`"
+                    + ") VALUES (?,?,?)";
+            PreparedStatement preparedStmt = connection.prepareStatement(query);
+            preparedStmt.setString(1, newProduit.getCode());
+            preparedStmt.setFloat(2, newProduit.getPrix());
+            String subQuery = "SELECT ID_DESIGNATION FROM designation WHERE FAMILLE_ARTICLE like '"+
+                    newProduit.getType()+"'";
+            Statement stm = connection.createStatement();
+            ResultSet rs = stm.executeQuery(subQuery);
+            if(rs.next()){
+                preparedStmt.setString(3, rs.getString("ID_DESIGNATION"));
+                preparedStmt.executeUpdate();
+                return true;
+            }
+        }
+        catch(SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        return false;
+    }
+ 
+
     
     
 }

@@ -30,6 +30,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import lpe_soft.Lpe_Soft;
 import lpe_soft.model.DataProduit;
+import lpe_soft.model.UserBean;
 
 /**
  * FXML Controller class
@@ -211,15 +212,9 @@ public class ProduitController implements Initializable {
         Type.setCellValueFactory(new PropertyValueFactory<DataProduit, String>("type"));
         Prix.setCellValueFactory(new PropertyValueFactory<DataProduit, Float>("prix"));
 
-        personData.add(new DataProduit("35486", "Carte mère", (float) 154.2));
-        personData.add(new DataProduit("85231", "Processeur", (float) 148.5));
-        personData.add(new DataProduit("78521", "Carte graphique", (float) 752.1));
-        personData.add(new DataProduit("15964", "Cable", (float) 15.1));
+        UserBean ub = new UserBean();
 
-        tableView.setItems(getPersonData());
+        tableView.setItems(ub.getAllProducts());
     }
 
-    public ObservableList<DataProduit> getPersonData() {
-        return personData;
-    }
 }

@@ -202,11 +202,11 @@ public class ClientController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        Code.setCellValueFactory(new PropertyValueFactory<DataClient, String>("codeClient"));
-        Nom.setCellValueFactory(new PropertyValueFactory<DataClient, String>("nom"));
-        Correspondant.setCellValueFactory(new PropertyValueFactory<DataClient, String>("correspondant"));
-        Email.setCellValueFactory(new PropertyValueFactory<DataClient, String>("email"));
-        Telephone.setCellValueFactory(new PropertyValueFactory<DataClient, String>("telephone"));
+        Code.setCellValueFactory(new PropertyValueFactory<>("codeClient"));
+        Nom.setCellValueFactory(new PropertyValueFactory<>("nom"));
+        Correspondant.setCellValueFactory(new PropertyValueFactory<>("correspondant"));
+        Email.setCellValueFactory(new PropertyValueFactory<>("email"));
+        Telephone.setCellValueFactory(new PropertyValueFactory<>("telephone"));
         updateTable();
     }
     
