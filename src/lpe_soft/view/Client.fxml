@@ -18,7 +18,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lpe_soft.view.ClientController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lpe_soft.view.ClientController">
    <children>
             <VBox layoutX="308.0" layoutY="174.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -48,9 +48,9 @@
                       <Menu mnemonicParsing="false" text="Documents">
                            <items>
                               <MenuItem mnemonicParsing="false" onAction="#handleRedigerCommande" text="Commande" />
-                              <MenuItem mnemonicParsing="false" onAction="#handleRedigerLivraison" text="Bon de livraison" />
-                              <MenuItem mnemonicParsing="false" onAction="#handleRedigerFacture" text="Facture" />
-                              <MenuItem mnemonicParsing="false" onAction="#handleRedigerTabCommande" text="Tableau de Commande" />
+                              <MenuItem disable="true" mnemonicParsing="false" onAction="#handleRedigerLivraison" text="Bon de livraison" />
+                              <MenuItem disable="true" mnemonicParsing="false" onAction="#handleRedigerFacture" text="Facture" />
+                              <MenuItem disable="true" mnemonicParsing="false" onAction="#handleRedigerTabCommande" text="Tableau de Commande" />
                            </items>
                         </Menu>
                       <Menu mnemonicParsing="false" text="Produit">
@@ -88,7 +88,7 @@
                   <Button fx:id="btnAjoutClient" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleAddClient" prefWidth="120.0" text="Ajout Client" GridPane.columnIndex="2" />
                </children>
             </GridPane>
-            <TitledPane animated="false" text="Filtre">
+            <TitledPane text="Filtre">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="1098.0">
                      <children>

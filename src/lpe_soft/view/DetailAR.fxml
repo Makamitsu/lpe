@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lpe_soft.view.DetailARController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lpe_soft.view.DetailARController">
    <children>
       <VBox layoutX="264.0" layoutY="73.0" prefHeight="700.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -129,7 +129,7 @@
             </GridPane>
             <AnchorPane prefHeight="75.0" prefWidth="1100.0">
                <children>
-                  <Button fx:id="btnDelete" layoutX="907.0" layoutY="19.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleDelete" prefWidth="100.0" text="Supprimer" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="170.0" />
+                  <Button fx:id="btnDelete" disable="true" layoutX="907.0" layoutY="19.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleDelete" prefWidth="100.0" text="Supprimer" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="170.0" />
                   <Button fx:id="btnBack" defaultButton="true" layoutX="1005.0" layoutY="19.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleBack" prefWidth="100.0" text="Retour" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="50.0" />
                   <MenuButton fx:id="btnExporter" alignment="CENTER" layoutX="461.0" layoutY="18.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="Exporter" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="290.0">
                     <items>

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lpe_soft.view.DetailClientController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lpe_soft.view.DetailClientController">
    <children>
       <VBox layoutX="336.0" layoutY="36.0" prefHeight="700.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -117,7 +117,7 @@
             <AnchorPane prefHeight="63.0" prefWidth="1100.0">
                <children>
                   <Button fx:id="btnEdit" layoutX="140.0" layoutY="33.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleEdit" prefWidth="100.0" text="Editer" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="350.0" />
-                  <Button fx:id="btnDelete" layoutX="287.0" layoutY="14.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleDelete" prefWidth="100.0" text="Supprimer" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="200.0" />
+                  <Button fx:id="btnDelete" disable="true" layoutX="287.0" layoutY="14.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleDelete" prefWidth="100.0" text="Supprimer" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="200.0" />
                   <Button fx:id="btnBack" defaultButton="true" layoutX="531.0" layoutY="33.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleBack" prefWidth="100.0" text="Retour" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="22.0" />
                </children>
             </AnchorPane>

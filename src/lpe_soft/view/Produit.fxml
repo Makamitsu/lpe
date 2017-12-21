@@ -18,7 +18,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lpe_soft.view.ProduitController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lpe_soft.view.ProduitController">
    <children>
             <VBox layoutX="308.0" layoutY="174.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -48,9 +48,9 @@
                       <Menu mnemonicParsing="false" text="Documents">
                            <items>
                               <MenuItem mnemonicParsing="false" onAction="#handleRedigerCommande" text="Commande" />
-                              <MenuItem mnemonicParsing="false" onAction="#handleRedigerLivraison" text="Bon de livraison" />
-                              <MenuItem mnemonicParsing="false" onAction="#handleRedigerFacture" text="Facture" />
-                              <MenuItem mnemonicParsing="false" onAction="#handleRedigerTabCommande" text="Tableau de Commande" />
+                              <MenuItem disable="true" mnemonicParsing="false" onAction="#handleRedigerLivraison" text="Bon de livraison" />
+                              <MenuItem disable="true" mnemonicParsing="false" onAction="#handleRedigerFacture" text="Facture" />
+                              <MenuItem disable="true" mnemonicParsing="false" onAction="#handleRedigerTabCommande" text="Tableau de Commande" />
                            </items>
                         </Menu>
                       <Menu mnemonicParsing="false" text="Produit">
@@ -90,15 +90,15 @@
                   <Button fx:id="btnAjoutFamille" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleAddDesignation" prefWidth="125.0" text="Gerer Désignation" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
                </children>
             </GridPane>
-            <TitledPane animated="false" text="Filtre">
+            <TitledPane expanded="false" text="Filtre">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="1098.0">
                      <children>
                         <Label layoutX="14.0" layoutY="14.0" text="Code Produit :" AnchorPane.leftAnchor="10.0" />
                         <Label layoutX="9.0" layoutY="58.0" text="Type d'article :" AnchorPane.leftAnchor="10.0" />
-                        <TextField fx:id="tfType" layoutX="92.0" layoutY="54.0" AnchorPane.leftAnchor="92.0" />
-                        <TextField fx:id="tfCode" layoutX="92.0" layoutY="10.0" AnchorPane.leftAnchor="92.0" />
-                        <Button fx:id="btnRecherche" defaultButton="true" layoutX="623.6" layoutY="165.6" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleRecherche" prefHeight="15.0" prefWidth="100.0" text="Rechercher" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0" />
+                        <TextField fx:id="tfType" editable="false" layoutX="92.0" layoutY="54.0" AnchorPane.leftAnchor="92.0" />
+                        <TextField fx:id="tfCode" editable="false" layoutX="92.0" layoutY="10.0" AnchorPane.leftAnchor="92.0" />
+                        <Button fx:id="btnRecherche" defaultButton="true" disable="true" layoutX="623.6" layoutY="165.6" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleRecherche" prefHeight="15.0" prefWidth="100.0" text="Rechercher" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0" />
                      </children>
                   </AnchorPane>
               </content>

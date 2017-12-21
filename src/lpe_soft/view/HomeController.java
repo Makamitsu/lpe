@@ -212,22 +212,22 @@ public class HomeController implements Initializable {
             if (diff < 300) { 
                 String type = row.getType();
                 if (type=="Facture"){
-                    Parent root = FXMLLoader.load(getClass().getResource("DetailFacture.fxml"));
-                    Scene scene = myMenuBar.getScene();
-                    scene.setRoot(root);
+//                    Parent root = FXMLLoader.load(getClass().getResource("DetailFacture.fxml"));
+//                    Scene scene = myMenuBar.getScene();
+//                    scene.setRoot(root);
                 }
                 else if (type=="Bon de Livraison"){
-                    Parent root = FXMLLoader.load(getClass().getResource("DetailLivraison.fxml"));
-                    Scene scene = myMenuBar.getScene();
-                    scene.setRoot(root);
+//                    Parent root = FXMLLoader.load(getClass().getResource("DetailLivraison.fxml"));
+//                    Scene scene = myMenuBar.getScene();
+//                    scene.setRoot(root);
                 }
                 else if (type=="Commande"){
                     //TODO
                 }
                 else if (type=="Accusé de Réception"){
-                    Parent root = FXMLLoader.load(getClass().getResource("DetailAR.fxml"));
-                    Scene scene = myMenuBar.getScene();
-                    scene.setRoot(root);
+//                    Parent root = FXMLLoader.load(getClass().getResource("DetailAR.fxml"));
+//                    Scene scene = myMenuBar.getScene();
+//                    scene.setRoot(root);
                 }
                 
             } else {

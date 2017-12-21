@@ -19,7 +19,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lpe_soft.view.HomeController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lpe_soft.view.HomeController">
    <children>
       <VBox layoutX="308.0" layoutY="174.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -49,9 +49,9 @@
                       <Menu mnemonicParsing="false" text="Documents">
                            <items>
                               <MenuItem mnemonicParsing="false" onAction="#handleRedigerCommande" text="Commande" />
-                              <MenuItem mnemonicParsing="false" onAction="#handleRedigerLivraison" text="Bon de livraison" />
-                              <MenuItem mnemonicParsing="false" onAction="#handleRedigerFacture" text="Facture" />
-                              <MenuItem mnemonicParsing="false" onAction="#handleRedigerTabCommande" text="Tableau de Commande" />
+                              <MenuItem disable="true" mnemonicParsing="false" onAction="#handleRedigerLivraison" text="Bon de livraison" />
+                              <MenuItem disable="true" mnemonicParsing="false" onAction="#handleRedigerFacture" text="Facture" />
+                              <MenuItem disable="true" mnemonicParsing="false" onAction="#handleRedigerTabCommande" text="Tableau de Commande" />
                            </items>
                         </Menu>
                       <Menu mnemonicParsing="false" text="Produit">
@@ -87,20 +87,20 @@
                   </Label>
                </children>
             </GridPane>
-            <TitledPane animated="false" text="Filtre">
+            <TitledPane expanded="false" text="Filtre">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="1098.0">
                      <children>
                         <Label layoutX="14.0" layoutY="14.0" text="Nom client :" />
                         <Label layoutX="9.0" layoutY="58.0" text="N° document :" />
-                        <TextField fx:id="tfCode" layoutX="90.0" layoutY="54.0" />
+                        <TextField fx:id="tfCode" editable="false" layoutX="90.0" layoutY="54.0" />
                         <Label layoutX="293.0" layoutY="14.0" text="Type de document :" />
-                        <TextField fx:id="tfClient" layoutX="90.0" layoutY="10.0" />
-                        <Button fx:id="btnRecherche" layoutX="953.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleRecherche" prefHeight="15.0" prefWidth="77.0" text="Rechercher" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="50.0" />
-                        <CheckBox fx:id="commande" layoutX="420.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleCBC" text="Commande" />
-                        <CheckBox fx:id="AR" layoutX="420.0" layoutY="32.0" mnemonicParsing="false" onAction="#handleCBL" text="Accusé de réception" />
-                        <CheckBox fx:id="livraison" layoutX="420.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleCBF" text="Bon de livraison" />
-                        <CheckBox fx:id="facture" layoutX="420.0" layoutY="74.0" mnemonicParsing="false" text="Facture" />
+                        <TextField fx:id="tfClient" editable="false" layoutX="90.0" layoutY="10.0" />
+                        <Button fx:id="btnRecherche" disable="true" layoutX="953.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleRecherche" prefHeight="15.0" prefWidth="77.0" text="Rechercher" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="50.0" />
+                        <CheckBox fx:id="commande" disable="true" layoutX="420.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleCBC" text="Commande" />
+                        <CheckBox fx:id="AR" disable="true" layoutX="420.0" layoutY="32.0" mnemonicParsing="false" onAction="#handleCBL" text="Accusé de réception" />
+                        <CheckBox fx:id="livraison" disable="true" layoutX="420.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleCBF" text="Bon de livraison" />
+                        <CheckBox fx:id="facture" disable="true" layoutX="420.0" layoutY="74.0" mnemonicParsing="false" text="Facture" />
                      </children>
                   </AnchorPane>
               </content>

@@ -42,7 +42,7 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                      <children>
-                        <Button fx:id="btn2" mnemonicParsing="false" onAction="#handleButtonConnexion" text="Mdp oublié ?" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+                        <Button fx:id="btn2" disable="true" mnemonicParsing="false" onAction="#handleButtonConnexion" text="Mdp oublié ?" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
                      </children>
                         </GridPane>
                         <Label text="Connexion">
