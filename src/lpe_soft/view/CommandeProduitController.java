@@ -62,6 +62,12 @@ public class CommandeProduitController implements Initializable {
         if (comboProducts.getValue() != null) {
             if (!quantiteField.getText().equals("") && Integer.parseInt(quantiteField.getText()) != 0){
                 if (!ofField.getText().equals("")){
+                    for (DataOF o : ofs){
+                        if (o.getNumOF().equals(ofField.getText())){
+                            ofInfo.setText("Cet OF existe déjà dans la commande.");
+                            return;
+                        }
+                    }
                     if (dateField.getValue() != null && dateField.getValue().isAfter(LocalDate.now())){
                         DataOF of = new DataOF(ofField.getText(),
                                 Integer.parseInt(quantiteField.getText()),
