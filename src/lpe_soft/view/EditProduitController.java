@@ -18,6 +18,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javax.annotation.PostConstruct;
 
 /**
  * FXML Controller class
@@ -30,15 +31,20 @@ public class EditProduitController implements Initializable {
     @FXML private ComboBox Famille;
     @FXML private TextField RoHS;
     @FXML private TextField MOE;
-    @FXML private TextField Nomenclature;
+    @FXML private RestrictiveTextField Nomenclature;
     @FXML private TextField Poids;
     @FXML private TextField Prix;
     @FXML private TextField PrixMP;
-    @FXML private TextField CodeDouanier;
+    @FXML private RestrictiveTextField CodeDouanier;
     @FXML private TextField Taxedouanes;
     @FXML private TextField Kit;
     @FXML private Button btnSave;
     @FXML private Button btnBack;
+    @PostConstruct
+    public void init(){
+        Nomenclature.setMaxLength(1);
+        CodeDouanier.setMaxLength(10);
+    }
     
     @FXML
     private void handleBack (ActionEvent event) throws IOException {
