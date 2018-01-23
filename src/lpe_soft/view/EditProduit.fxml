@@ -41,6 +41,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
                         <Label text="Code interne :" GridPane.halignment="RIGHT" />
@@ -52,7 +53,7 @@
                         <Label text="Prix unitaire (en €) :" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
                         <Label text="Prix matière première (en €) :" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
                         <Label text="Code douanier :" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
-                        <Label text="\% de droit de douanes :" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+                        <Label text="droit de douanes (%) :" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
                         <Label text="Kit :" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
                         <TextField fx:id="Code" text="info" GridPane.columnIndex="1">
                            <GridPane.margin>
@@ -99,6 +100,18 @@
                               <Insets left="10.0" />
                            </GridPane.margin>
                         </ComboBox>
+                        <Label text="Libellé :" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+                        <TextField text="info" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </TextField>
+                        <Label text="KIT N°" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+                        <TextField text="info" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </TextField>
                      </children>
                   </GridPane>
                </children>
