@@ -3,10 +3,6 @@ package lpe_soft.model;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-/**
- *
- * @author Chetan
- */
 public class DataProduit {
 
     private StringProperty code,type;
