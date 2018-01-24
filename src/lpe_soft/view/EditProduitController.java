@@ -58,6 +58,22 @@ public class EditProduitController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        Nomenclature.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (newValue.length() > 1) {
+                    Nomenclature.setText(newValue.substring(0, 1));
+                }
+            }
+        });
+        CodeDouanier.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (newValue.length() > 10) {
+                    CodeDouanier.setText(newValue.substring(0, 10));
+                }
+            }
+        });
         Taxedouanes.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
@@ -69,24 +85,24 @@ public class EditProduitController implements Initializable {
         PrixMP.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if (!newValue.matches("\\d*")) {
-                    PrixMP.setText(newValue.replaceAll("[^\\d]", ""));
+                if (!newValue.matches("^\\d+\\,?\\d*$")) {
+                    PrixMP.setText(newValue.replaceAll("((?=[\\D])\\w)", ""));
                 }
             }
         });
         Prix.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if (!newValue.matches("\\d*")) {
-                    Prix.setText(newValue.replaceAll("[^\\d]", ""));
+                if (!newValue.matches("^\\d+\\,?\\d*$")) {
+                    Prix.setText(newValue.replaceAll("((?=[\\D])\\w)", ""));
                 }
             }
         });
         Poids.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                if (!newValue.matches("\\d*")) {
-                    Poids.setText(newValue.replaceAll("[^\\d]", ""));
+                if (!newValue.matches("^\\d+\\,?\\d*$")) {
+                    Poids.setText(newValue.replaceAll("((?=[\\D])\\w)", ""));
                 }
             }
         });
