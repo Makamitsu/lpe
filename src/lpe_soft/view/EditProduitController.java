@@ -8,6 +8,8 @@ package lpe_soft.view;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -53,7 +55,38 @@ public class EditProduitController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        Taxedouanes.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    Taxedouanes.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
+        PrixMP.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    PrixMP.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
+        Prix.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    Prix.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
+        Poids.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    Poids.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
     }    
     
 }
