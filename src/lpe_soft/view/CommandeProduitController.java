@@ -6,6 +6,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,6 +24,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javax.annotation.PostConstruct;
 import lpe_soft.model.DataClient;
 import lpe_soft.model.DataCommande;
 import lpe_soft.model.DataOF;
@@ -56,6 +59,15 @@ public class CommandeProduitController implements Initializable {
     private void handleEnd (ActionEvent event) throws IOException {
         
     }
+
+    @FXML
+    private void handleRemoveOF (ActionEvent event) throws IOException {
+        DataOF selectedOF = (DataOF) tableProducts.getSelectionModel().getSelectedItem();
+        if (selectedOF != null){
+            ofs.remove(selectedOF);
+            updateTable();
+        }
+    }
     
     @FXML
     private void handleAdd(ActionEvent event) throws IOException {
@@ -69,9 +81,10 @@ public class CommandeProduitController implements Initializable {
                         }
                     }
                     if (dateField.getValue() != null && dateField.getValue().isAfter(LocalDate.now())){
+                        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy 'W'w");
                         DataOF of = new DataOF(ofField.getText(),
                                 Integer.parseInt(quantiteField.getText()),
-                                dateField.getValue().format(DateTimeFormatter.ISO_WEEK_DATE));
+                                dateField.getValue().format(formatter));
                         of.setProduit((DataProduit) comboProducts.getValue());
                         ofs.add(of);
                         dateInfo.setText("");
@@ -109,6 +122,14 @@ public class CommandeProduitController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        quantiteField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    quantiteField.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
         ofs = new ArrayList<>();
         produit.setCellValueFactory(new PropertyValueFactory<>("produit"));
         quantite.setCellValueFactory(new PropertyValueFactory<>("quantite"));

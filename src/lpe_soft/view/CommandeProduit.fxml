@@ -112,7 +112,8 @@
                   </TableView>
                   <Button fx:id="btnAdd" layoutX="268.0" layoutY="525.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleAdd" prefHeight="25.0" prefWidth="117.0" text="Ajouter un ordre" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="268.0" />
                   <Button fx:id="btnEnd" defaultButton="true" disable="true" layoutX="978.0" layoutY="461.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleEnd" prefWidth="100.0" text="Terminer" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="22.0" />
-                  <Button fx:id="btnBack" defaultButton="true" layoutX="867.0" layoutY="561.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleBack" prefWidth="100.0" text="Annuler" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="133.0" />
+                  <Button fx:id="btnBack" layoutX="867.0" layoutY="561.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleBack" prefWidth="100.0" text="Annuler" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="133.0" />
+                  <Button layoutX="452.0" layoutY="561.0" mnemonicParsing="false" onAction="#handleRemoveOF" text="Retirer l'OF" AnchorPane.bottomAnchor="14.0" />
                </children>
             </AnchorPane>
          </center>
