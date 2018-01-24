@@ -104,12 +104,12 @@
                         </TextField>
                         <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <children>
-                              <RadioButton fx:id="rbtnOui" mnemonicParsing="false" prefHeight="41.0" prefWidth="87.0" text="RadioButton">
+                              <RadioButton fx:id="rbtnOui" mnemonicParsing="false" prefHeight="41.0" prefWidth="87.0" text="Oui">
                                  <VBox.margin>
                                     <Insets left="10.0" />
                                  </VBox.margin>
                               </RadioButton>
-                              <RadioButton fx:id="rbtnNon" mnemonicParsing="false" prefHeight="41.0" prefWidth="87.0" text="RadioButton">
+                              <RadioButton fx:id="rbtnNon" mnemonicParsing="false" prefHeight="41.0" prefWidth="87.0" text="Non">
                                  <VBox.margin>
                                     <Insets left="10.0" />
                                  </VBox.margin>
