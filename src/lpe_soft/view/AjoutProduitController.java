@@ -42,6 +42,8 @@ public class AjoutProduitController implements Initializable {
     @FXML TextField prixMat;
     @FXML TextField codeDouanier;
     @FXML TextField droitDouane;
+    @FXML TextField Libelle;
+    @FXML TextField Kit;
     @FXML Label infoValid;
 
     @FXML

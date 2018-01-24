@@ -19,6 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 
 /**
@@ -30,7 +31,8 @@ public class EditProduitController implements Initializable {
 
     @FXML private TextField Code; 
     @FXML private ComboBox Famille;
-    @FXML private TextField RoHS;
+    @FXML private RadioButton rbtnOui;        
+    @FXML private RadioButton rbtnNon;
     @FXML private TextField MOE;
     @FXML private TextField Nomenclature;
     @FXML private TextField Poids;
@@ -39,6 +41,7 @@ public class EditProduitController implements Initializable {
     @FXML private TextField CodeDouanier;
     @FXML private TextField Taxedouanes;
     @FXML private TextField Kit;
+    @FXML private TextField Libelle;
     @FXML private Button btnSave;
     @FXML private Button btnBack;
     

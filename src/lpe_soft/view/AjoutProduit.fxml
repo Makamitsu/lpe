@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lpe_soft.view.AjoutProduitController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lpe_soft.view.AjoutProduitController">
     <children>
       <BorderPane layoutX="238.0" layoutY="132.0" prefHeight="700.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
@@ -28,6 +28,7 @@
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" percentWidth="10.0" prefWidth="200.0" />
               </columnConstraints>
               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -65,7 +66,7 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label text="Prix (en €) :" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                  <Label text="Prix unitaire (en €) :" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -80,7 +81,7 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label text="Droit Douane :" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                  <Label text="Droit Douane (%):" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -139,6 +140,18 @@
                         <Insets left="10.0" />
                      </GridPane.margin>
                   </ComboBox>
+                  <Label text="Kit N° :" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+                  <TextField fx:id="Kit" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="Libelle" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Libellé :" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
                </children>
             </GridPane>
          </center>
