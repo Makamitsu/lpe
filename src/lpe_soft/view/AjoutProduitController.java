@@ -3,6 +3,8 @@ package lpe_soft.view;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -75,7 +77,59 @@ public class AjoutProduitController implements Initializable {
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-       updateComboDesignation();
+        nomenclature.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (newValue.length() > 1) {
+                    nomenclature.setText(newValue.substring(0, 1));
+                }
+            }
+        });
+        codeDouanier.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (newValue.length() > 10) {
+                    codeDouanier.setText(newValue.substring(0, 10));
+                }
+            }
+        });
+        
+        
+        droitDouane.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("^\\d+\\,?\\d*$")) {
+                    droitDouane.setText(newValue.replaceAll("((?=[\\D])\\w)", ""));
+                }
+            }
+        });
+        prixMat.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("^\\d+\\,?\\d*$")) {
+                    prixMat.setText(newValue.replaceAll("((?=[\\D])\\w)", ""));
+                }
+            }
+        });
+        prix.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("^\\d+\\,?\\d*$")) {
+                    prix.setText(newValue.replaceAll("((?=[\\D])\\w)", ""));
+                }
+            }
+        });
+        poids.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("^\\d+\\,?\\d*$")) {
+                    poids.setText(newValue.replaceAll("((?=[\\D])\\w)", ""));
+                }
+            }
+        });
+        
+        
+        updateComboDesignation();
     }
     
     private void updateComboDesignation(){
